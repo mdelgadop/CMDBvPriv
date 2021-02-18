@@ -52,19 +52,6 @@ class OtherController
 
     }
 
-    public function indexMarca(){
-
-        //Asigno los apps a una variable que estará esperando la vista
-		$repository = new OtherRepository;
-        $this->marca = $repository->getMarca();
-
-        $rowset = $this->marca;
-
-        //Le paso los datos a la vista
-        require("view/indexOther.php");
-
-    }
-
 }
 
 ?>

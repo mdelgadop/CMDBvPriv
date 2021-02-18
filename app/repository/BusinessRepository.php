@@ -8,6 +8,16 @@ class BusinessRepository
 
     }
 
+	public function getStats(){
+        $retArray = [
+            1 => new Stats("Documento",1),
+            2 => new Stats("Localizacion",2),
+            3 => new Stats("Organizacion",2)
+        ];
+
+		return $retArray;
+	}
+	
     public function getDocumento(){
 
 		$rep = new OtherRepository;

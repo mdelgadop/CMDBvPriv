@@ -10,7 +10,7 @@
 
 					<tr>
 						<td><?php echo $row->nombre ?></td>
-						<td><?php echo $row->marca->nombre ?></td>
+						<td><?php echo $row->marca ?></td>
 					</tr>
 
 				 <?php endforeach; ?>

@@ -1,30 +1,51 @@
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
 
 			<ul class="nav flex-column">
-			  <li class="nav-item">
-				<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSoftwareModalView">
-					  +
-					</button>
-				</div>
-			  </li>
 			  <li><hr class="dropdown-divider"></li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=st">Estado</a>
+				  <li class="nav-item row align-items-center">
+					<div class="col">
+						<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=st">Estado</a>
+					</div>
+					<div class="col text-end">
+					  <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addEstadoModalView">+</a>
+					</div>
+				  </li>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=cr">Criticidad</a>
+				  <li class="nav-item row align-items-center">
+					<div class="col">
+						<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=cr">Criticidad</a>
+					</div>
+					<div class="col text-end">
+					  <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addCriticidadModalView">+</a>
+					</div>
+				  </li>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=td">Tipo de documento</a>
+				  <li class="nav-item row align-items-center">
+					<div class="col">
+						<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=td">Tipo&nbsp;de&nbsp;documento</a>
+					</div>
+					<div class="col text-end">
+					  <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addTipoDeDocumentoModalView">+</a>
+					</div>
+				  </li>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=ts">Tipo de software</a>
+				  <li class="nav-item row align-items-center">
+					<div class="col">
+						<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=ts">Tipo&nbsp;de&nbsp;software</a>
+					</div>
+					<div class="col text-end">
+					  <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addTipoDeSoftwareModalView">+</a>
+					</div>
+				  </li>
 			  </li>
 			</ul>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
 
 <?php
 
@@ -53,21 +74,17 @@ else
         </div>
     </div>
 	
+	<?php
+	require("./view/indexConfig/modal/addEstadoModalView.php");
+	
+	require("./view/indexConfig/modal/addCriticidadModalView.php");
+	
+	require("./view/indexConfig/modal/addTipoDeDocumentoModalView.php");
+	
+	require("./view/indexConfig/modal/addTipoDeSoftwareModalView.php");
+?>
 
-	<div class="modal fade" id="addSoftwareModalView" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h5 class="modal-title" id="staticBackdropLabel">Nuevo</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		  </div>
-		  <div class="modal-body">
-			...
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			<button type="button" class="btn btn-primary" onclick="javascript:alert('Aún no implementado')">Guardar</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+
+
+
+

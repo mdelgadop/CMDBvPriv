@@ -2,7 +2,16 @@
         <div class="col-md-2">
 			<ul class="nav flex-column">
 			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="./?id=<?=$_GET["id"]?>">Todo</a>
+
+				  <li class="nav-item row align-items-center">
+					<div class="col">
+						<a class="nav-link active" aria-current="page" href="./?id=<?=$_GET["id"]?>">Todo</a>
+					</div>
+					<div class="col text-end">
+					  <a href="#" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#addInfrasModalView">+</a>
+					</div>
+				  </li>
+
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=Mon">Monitores</a>
@@ -45,6 +54,7 @@
 			</table>
         </div>
     </div>
-	
 
-
+<?php
+require("./view/indexInfras/modal/addInfrasModalView.php");
+?>

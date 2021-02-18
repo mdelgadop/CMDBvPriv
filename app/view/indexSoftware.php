@@ -1,10 +1,7 @@
     <div class="row">
         <div class="col-md-2">
-
 			<ul class="nav flex-column">
-
 			  <li class="nav-item">
-				
 				  <li class="nav-item row align-items-center">
 					<div class="col">
 						<a class="nav-link active" aria-current="page" href="./?id=<?=$_GET["id"]?>">Todo</a>
@@ -59,21 +56,6 @@
         </div>
     </div>
 	
-
-	<div class="modal fade" id="addSoftwareModalView" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<h5 class="modal-title" id="staticBackdropLabel">Nuevo</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		  </div>
-		  <div class="modal-body">
-			...
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-			<button type="button" class="btn btn-primary" onclick="javascript:alert('Aún no implementado')">Guardar</button>
-		  </div>
-		</div>
-	  </div>
-	</div>
+<?php
+require("./view/indexSoftware/modal/addSoftwareModalView.php");
+?>

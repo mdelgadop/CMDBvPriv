@@ -7,6 +7,16 @@ class ConfigRepository
 
     }
 
+	public function getStats(){
+        $retArray = [
+            1 => new Stats("Criticidad",3),
+            2 => new Stats("Status",4),
+            3 => new Stats("Tipo Documento",2)
+        ];
+
+		return $retArray;
+	}
+	
     public function getCriticidad(){
 
         //Asigno los apps a una variable que estará esperando la vista

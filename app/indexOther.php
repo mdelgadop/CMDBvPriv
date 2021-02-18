@@ -8,7 +8,6 @@
 
 	//Ejecuto el método
 	
-
 	if(!isset($_GET["q1"]) or $_GET["q1"]=="tr")
 	{
 		require("./model/Other/TipoRed.php");
@@ -23,11 +22,6 @@
 	{
 		require("./model/Other/Familia_SO.php");
 		$controller->indexFamiliaSO();
-	}
-	else if($_GET["q1"]=="ma")
-	{
-		require("./model/Other/Marca.php");
-		$controller->indexMarca();
 	}
 
 ?>
