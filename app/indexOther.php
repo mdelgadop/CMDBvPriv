@@ -16,7 +16,6 @@
 	}
 	else if($_GET["q1"]=="mo")
 	{
-		require("./model/Other/Marca.php");
 		require("./model/Other/Modelo.php");
 		$controller->indexModelo();
 	}

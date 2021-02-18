@@ -71,7 +71,7 @@
 
 if(!isset($_GET["id"]))
 {
-	echo "Elija una opción";
+	require("./indexPanelStats.php");
 }
 else if($_GET["id"]=="software")
 {
