@@ -7,7 +7,32 @@
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			...
+			<form>
+			  <div class="mb-3">
+				<label for="nnDocumento" class="form-label">Nombre</label>
+				<input type="text" class="form-control" id="nnDocumento">
+			  </div>
+			  <div class="mb-3">
+				<input type="checkbox" class="form-check-input" id="cbActivoDocumento">
+				<label class="form-check-label" for="cbActivoDocumento">Activo</label>
+			  </div>
+			  <div class="mb-3">
+				<select class="form-select" aria-label="Tipo">
+				  <option selected>Tipo</option>
+				  <option value="1">One</option>
+				  <option value="2">Two</option>
+				  <option value="3">Three</option>
+				</select>
+			  </div>
+			  <div class="mb-3">
+				<select class="form-select" aria-label="Organización">
+				  <option selected>Organización</option>
+				  <option value="1">One</option>
+				  <option value="2">Two</option>
+				  <option value="3">Three</option>
+				</select>
+			  </div>
+			</form>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

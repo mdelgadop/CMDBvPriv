@@ -7,16 +7,6 @@ class ConfigRepository
 
     }
 
-	public function getStats(){
-        $retArray = [
-            1 => new Stats("Criticidad",3),
-            2 => new Stats("Status",4),
-            3 => new Stats("Tipo Documento",2)
-        ];
-
-		return $retArray;
-	}
-	
     public function getCriticidad(){
 
         //Asigno los apps a una variable que estará esperando la vista
@@ -30,6 +20,17 @@ class ConfigRepository
         return $retArray;
     }
 	
+	public function newCriticidad($nn){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Criticidad($nn);
+
+        return "newTipoSoftware:".$nn;
+    }
+	
 	public function getStatus(){
         $retArray = [
             1 => new Status("En producción"),
@@ -41,6 +42,18 @@ class ConfigRepository
 		return $retArray;
 	}
 
+	public function newStatus($nn){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+
+        $nuevo = new Status($nn);
+
+        return "newStatus:".$nn;
+    }
+	
 	public function getTipoDocumento(){
 
         //Asigno los apps a una variable que estará esperando la vista
@@ -53,6 +66,18 @@ class ConfigRepository
         return $retArray;
     }
 
+	public function newTipoDocumento($nn){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+
+        $nuevo = new Tipo_Documento($nn);
+
+        return "newTipoDocumento:".$nn;
+    }
+	
 	public function getTipoSoftware(){
 
         //Asigno los apps a una variable que estará esperando la vista
@@ -67,6 +92,17 @@ class ConfigRepository
         return $retArray;
     }
 
+	public function newTipoSoftware($nn){
+
+        //Asigno los apps a una variable que estará esperando la vista
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        $nuevo = new Tipo_Software($nn);
+
+        return "newTipoSoftware:".$nn;
+    }
 }
 
 ?>

@@ -40,6 +40,9 @@
 
 <?php
 
+require("./core/Encriptacion.php");
+$encriptacion = new Encriptacion;
+
 if(!isset($_GET["q1"]) or $_GET["q1"]=="tr")
 {
 	require("./view/indexOther/tipoRed.php");
@@ -60,9 +63,6 @@ else
 
         </div>
     </div>
-	
-
-
 
 <?php
 	require("./view/indexOther/modal/addTipoDeRedModalView.php");

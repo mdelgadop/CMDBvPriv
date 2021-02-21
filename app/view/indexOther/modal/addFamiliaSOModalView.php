@@ -8,7 +8,12 @@
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			...
+			<form>
+			  <div class="mb-3">
+				<label for="nnFamiliaSO" class="form-label">Nombre</label>
+				<input type="text" class="form-control" id="nnFamiliaSO">
+			  </div>
+			</form>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -19,9 +24,28 @@
 	</div>
 
 <script>
-
 function GuardarFamiliaSO()
 {
-	alert('GuardarFamiliaSO aún no implementado')
+	var parametros = {
+		"op" : "nn",
+		"token" : "<?= $encriptacion->getToken() ?>",
+		"nn" : $('#nnFamiliaSO').val()
+	};
+	$.ajax({
+		data:  parametros,
+		url:   './api/other/fso/',
+		type:  'post',
+		success:  function (response) {
+			if(response==='OK')
+				location.reload();
+			else
+				alert(response);
+		},
+		error:  function (xhr, ajaxOptions, thrownError) {
+			alert('Error');
+			loadingUnblock();
+		}
+	});
 }
+
 </script>

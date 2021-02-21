@@ -6,7 +6,12 @@
 			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		  </div>
 		  <div class="modal-body">
-			...
+			<form>
+			  <div class="mb-3">
+				<label for="nnTipoDocumento" class="form-label">Nombre</label>
+				<input type="text" class="form-control" id="nnTipoDocumento">
+			  </div>
+			</form>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -20,7 +25,26 @@
 
 function GuardarTipoDeDocumento()
 {
-	alert('GuardarTipoDeDocumento aún no implementado')
+	var parametros = {
+		"op" : "nn",
+		"token" : "<?= $encriptacion->getToken() ?>",
+		"nn" : $('#nnTipoDocumento').val()
+	};
+	$.ajax({
+		data:  parametros,
+		url:   './api/conf/td/',
+		type:  'post',
+		success:  function (response) {
+			if(response==='OK')
+				location.reload();
+			else
+				alert(response);
+		},
+		error:  function (xhr, ajaxOptions, thrownError) {
+			alert('Error');
+			loadingUnblock();
+		}
+	});
 }
 
 </script>

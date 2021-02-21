@@ -39,6 +39,17 @@ class OtherRepository
 		return $retArray;
 	}
 
+	public function newTipoRed($nn){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new TipoRed($nn);
+
+        return "newTipoRed:".$nn;
+    }
+	
     public function getModelo(){
 
         //Asigno los apps a una variable que estará esperando la vista
@@ -49,6 +60,20 @@ class OtherRepository
         ];
 
         return $retArray;
+    }
+	
+	public function newModelo($nn, $ma){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+		if($ma=='')
+			return "La marca no puede estar vacía";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Modelo($nn, $ma);
+
+        return "newModelo:".$nn.'-'.$ma;
     }
 	
 	public function getFamiliaSO(){
@@ -64,6 +89,17 @@ class OtherRepository
         return $retArray;
     }
 
+	public function newFamiliaSO($nn){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Familia_SO($nn);
+
+        return "newFamiliaSO:".$nn;
+    }
+	
 }
 
 ?>

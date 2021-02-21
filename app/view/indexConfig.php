@@ -49,6 +49,9 @@
 
 <?php
 
+require("./core/Encriptacion.php");
+$encriptacion = new Encriptacion;
+
 if(!isset($_GET["q1"]) or $_GET["q1"]=="st")
 {
 	require("./view/indexConfig/status.php");
