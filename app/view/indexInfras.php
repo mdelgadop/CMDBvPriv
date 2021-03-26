@@ -14,6 +14,9 @@
 
 			  </li>
 			  <li class="nav-item">
+				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=pc">PCs</a>
+			  </li>
+			  <li class="nav-item">
 				<a class="nav-link" href="./?id=<?=$_GET["id"]?>&q1=Mon">Monitores</a>
 			  </li>
 			  <li class="nav-item">

@@ -17,7 +17,6 @@ class InfrasController
         //Asigno los apps a una variable que estará esperando la vista
         $rowset = $repository->getInfras();
 
-
         //Le paso los datos a la vista
         require("view/indexInfras.php");
 

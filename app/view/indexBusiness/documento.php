@@ -4,7 +4,6 @@
 						<th>Documento</th>
 						<th>Tipo</th>
 						<th>Organización</th>
-						<th>Activo</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -14,7 +13,6 @@
 						<td><?php echo $row->nombre ?></td>
 						<td><?php echo $row->tipoDocumento->nombre ?></td>
 						<td><?php echo $row->organizacion->nombre ?></td>
-						<td><?php echo ($row->activo === 'T' ? 'Activo' : 'No activo') ?></td>
 					</tr>
 
 				 <?php endforeach; ?>

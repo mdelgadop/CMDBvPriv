@@ -39,6 +39,9 @@
 
 <?php
 
+require("./core/Encriptacion.php");
+$encriptacion = new Encriptacion;
+
 if(!isset($_GET["q1"]) or $_GET["q1"]=="do")
 {
 	require("./view/indexBusiness/documento.php");

@@ -1,5 +1,5 @@
 <?php
-require("./repository/OtherRepository.php");
+//require("./repository/OtherRepository.php");
 
 class BusinessRepository
 {
@@ -20,14 +20,25 @@ class BusinessRepository
 	
     public function getDocumento(){
 
-		$rep = new OtherRepository;
+		//$rep = new OtherRepository;
         //Asigno los apps a una variable que estará esperando la vista
 
         $retArray = [
-            1 => new Documento("ISO20000 Documento para el personal", 'T', null, 'Documento de ISO20000 para todo el personal de la empresa', null, null)
+            1 => new Documento("ISO20000 Documento para el personal", null, 'Documento de ISO20000 para todo el personal de la empresa', null, null)
         ];
 
         return $retArray;
+    }
+	
+	public function newDocumento($nn, $miOrganizacion, $miDescripcion, $miArchivo, $miTipoDocumento){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Documento($nn, $miOrganizacion, $miDescripcion, $miArchivo, $miTipoDocumento);
+
+        return "newDocumento:".$nn.'-'.$miOrganizacion.'-'.$miDescripcion.'-'.$miArchivo.'-'.$miTipoDocumento;
     }
 	
 	public function getLocalizacion(){
@@ -36,22 +47,44 @@ class BusinessRepository
 		//$organizaciones = $this->getOrganizacion();
 		
         $retArray = [
-            1 => new Localizacion("Madrid", 'T', null, 'Madrid', 'España', 'Chaparra 15'),
-            2 => new Localizacion("Valencia", 'T', null, 'Valencia', 'España', 'Estrella 16'),
+            1 => new Localizacion("Madrid", null, 'Madrid', 'España', 'Chaparra 15'),
+            2 => new Localizacion("Valencia", null, 'Valencia', 'España', 'Estrella 16'),
         ];
 
         return $retArray;
     }
 
+	public function newLocalizacion($nn, $miOrganizacion, $miCiudad, $miPais, $miDireccion){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Localizacion($nn, $isActivo, $miOrganizacion, $miCiudad, $miPais, $miDireccion);
+
+        return "newLocalizacion:".$nn.'-'.$miOrganizacion.'-'.$miCiudad.'-'.$miPais.'-'.$miDireccion;
+    }
+	
 	public function getOrganizacion(){
         $retArray = [
-            1 => new Organizacion("Madrid", 'MAD', 'T', null),
-            2 => new Organizacion("Valencia", 'VAL', 'T', null)
+            1 => new Organizacion("Madrid", 'MAD', null),
+            2 => new Organizacion("Valencia", 'VAL', null)
         ];
 
 		return $retArray;
 	}
 
+	public function newOrganizacion($nn, $codigo, $padre){
+
+		if($nn=='')
+			return "El nombre no puede estar vacío";
+
+        //Asigno los apps a una variable que estará esperando la vista
+        $nuevo = new Organizacion($nn, $codigo, $padre);
+
+        return "newOrganizacion:".$nn.'-'.$codigo;
+    }
+	
 
 }
 

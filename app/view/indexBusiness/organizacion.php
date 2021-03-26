@@ -3,7 +3,6 @@
 					<tr>
 						<th>Organización</th>
 						<th>Codigo</th>
-						<th>Activo</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -12,7 +11,6 @@
 					<tr>
 						<td><?php echo $row->nombre ?></td>
 						<td><?php echo $row->codigo ?></td>
-						<td><?php echo ($row->activo === 'T' ? 'Activo' : 'No activo') ?></td>
 					</tr>
 
 				 <?php endforeach; ?>

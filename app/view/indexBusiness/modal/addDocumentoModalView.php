@@ -13,11 +13,11 @@
 				<input type="text" class="form-control" id="nnDocumento">
 			  </div>
 			  <div class="mb-3">
-				<input type="checkbox" class="form-check-input" id="cbActivoDocumento">
-				<label class="form-check-label" for="cbActivoDocumento">Activo</label>
+				<label for="descDocumento" class="form-label">Descripción</label>
+				<input type="text" class="form-control" id="descDocumento">
 			  </div>
 			  <div class="mb-3">
-				<select class="form-select" aria-label="Tipo">
+				<select class="form-select" aria-label="Tipo" id="selTipoDoc">
 				  <option selected>Tipo</option>
 				  <option value="1">One</option>
 				  <option value="2">Two</option>
@@ -25,7 +25,7 @@
 				</select>
 			  </div>
 			  <div class="mb-3">
-				<select class="form-select" aria-label="Organización">
+				<select class="form-select" aria-label="Organización" id="selOrgDoc">
 				  <option selected>Organización</option>
 				  <option value="1">One</option>
 				  <option value="2">Two</option>
@@ -46,7 +46,30 @@
 
 function GuardarDocumento()
 {
-	alert('GuardarDocumento aún no implementado')
+	var parametros = {
+		"op" : "nn",
+		"token" : "<?= $encriptacion->getToken() ?>",
+		"nn" : $('#nnDocumento').val(),
+		"td" : $('#selTipoDoc').val(),
+		"de" : $('#descDocumento').val(),
+		"or" : $('#selOrgDoc').val()		
+	};
+	alert(JSON.stringify(parametros));
+	$.ajax({
+		data:  parametros,
+		url:   './api/business/do/',
+		type:  'post',
+		success:  function (response) {
+			if(response==='OK')
+				location.reload();
+			else
+				alert(response);
+		},
+		error:  function (xhr, ajaxOptions, thrownError) {
+			alert('Error');
+			loadingUnblock();
+		}
+	});
 }
 
 </script>
